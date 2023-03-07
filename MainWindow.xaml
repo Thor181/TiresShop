@@ -1,0 +1,117 @@
+﻿<Window x:Class="TiresShopApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiresShopApplication"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ШИНЫ.RU" Height="650" Width="1000" Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_MouseDown" Icon="tire.ico">
+    <Grid Background="Transparent">
+
+        <Border CornerRadius="8" Background="{StaticResource GlobalPrimaryBackgroundColor}">
+            <Grid x:Name="GridNavigation">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Control keys-->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
+                    <Button x:Name="MinimizeButton" Style="{StaticResource ControlKey}" Content="{DynamicResource MinimizeIcon}" Click="MinimizeButton_Click"/>
+                    <Button x:Name="FullViewButton" Style="{StaticResource ControlKey}" Content="{DynamicResource MaximizeIcon}" Click="FullViewButton_Click"/>
+                    <Button x:Name="CloseAppButton" Style="{StaticResource ControlKey}" Content="{DynamicResource CloseIcon}" Tag="CloseButton" Click="CloseAppButton_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <!--Menu panel-->
+                <Border x:Name="MenuBorder" Background="{StaticResource GlobalSecondaryBackgroundColor}" CornerRadius="8,0,0,8" Width="50" HorizontalAlignment="Left" 
+                        Grid.RowSpan="2">
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Height="30" Margin="0 10 0 0" Width="210">
+                            <Image Source="pack://application:,,,/Images/tires_icon.png" HorizontalAlignment="Left" Margin="13 0 0 0"></Image>
+                            <Label Content="ШИНЫ.RU" FontSize="20" Margin="0 -2 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"></Label>
+                        </Grid>
+
+                        <StackPanel Grid.Row="1" Margin="0 30 0 0" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="SearchTiresButton" Style="{DynamicResource MenuButton}" Click="SearchTiresButton_Click" Command="">
+                                    <materialDesign:PackIcon Kind="album" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"></materialDesign:PackIcon>
+                                  
+                                </Button>
+                                <Label Content="ПОИСК ШИН" Style="{DynamicResource LightFontStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="SearchWheelsButton" Style="{DynamicResource MenuButton}" Click="SearchWheelsButton_Click">
+                                    <materialDesign:PackIcon Kind="Dharmachakra" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                   
+                                </Button>
+                                <Label Content="ПОИСК ДИСКОВ" Style="{DynamicResource LightFontStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="CartButton" Style="{DynamicResource MenuButton}" Click="CartButton_Click">
+                                    <materialDesign:PackIcon Kind="Cart" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Label Content="КОРЗИНА" Style="{DynamicResource LightFontStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="SettingsButton" Style="{DynamicResource MenuButton}" Click="SettingsButton_Click">
+                                    <materialDesign:PackIcon Kind="Cog" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Label Content="НАСТРОЙКИ" Style="{DynamicResource LightFontStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel x:Name="AdminPanelStackPanel" Orientation="Horizontal">
+                                <Button x:Name="AdminPanelButton" Style="{DynamicResource MenuButton}" Click="AdminPanelButton_Click">
+                                    <materialDesign:PackIcon Kind="AccountCogOutline" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Label Content="Админ-панель" Style="{DynamicResource LightFontStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+
+                <!--Show/Hide menu animation-->
+                <ToggleButton Grid.Column="1" Style="{DynamicResource ToggleButton}" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="HideStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="MenuBorder" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="170" To="50" Duration="0:0:0.2" ></DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="ShowStackPanel">
+                                    <DoubleAnimation Storyboard.TargetName="MenuBorder" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="50" To="170" Duration="0:0:0.2"></DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ToggleButton.Triggers>
+                </ToggleButton>
+
+                <Frame x:Name="MainFrame"
+                       Grid.Column="1" Grid.Row="1" 
+                       Margin="20">
+                </Frame>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

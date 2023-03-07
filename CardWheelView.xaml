@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="TiresShopApplication.CardWheelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TiresShopApplication"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Height="318" Width="300" Background="Transparent" Margin="10" materialDesign:ShadowAssist.ShadowDepth="Depth5">
+    <Grid x:Name="CardMainGridWheel">
+
+        <Border Background="White" 
+                CornerRadius="5"/>
+
+        <StackPanel>
+
+            <!--Primary StackPanel-->
+            <StackPanel HorizontalAlignment="Stretch" Height="164" Margin="5">
+
+                <TextBlock x:Name="NameCardTextblock" Text="{Binding TireName}" FontSize="20" FontWeight="Bold" TextWrapping="WrapWithOverflow" />
+
+                <TextBlock x:Name="CodeArticleCardTextblock" FontSize="15" Margin="0 20 0 0">
+                    <Run Text="Код:"/>
+                    <Run Text="{Binding Id}" FontWeight="Bold"/>
+                </TextBlock>
+
+                <TextBlock x:Name="DiameterTireCardTextblock" TextWrapping="Wrap">
+                    <Run Text="Типоразмер:" FontSize="15"/>
+                    <Run Text="{Binding Diameter}" FontWeight="Bold"/>
+                </TextBlock>
+
+                <TextBlock>
+                    <Run Text="Привод: " FontSize="15"></Run>
+                    <Run Text="{Binding DriveUnit}" FontWeight="Bold"></Run>
+                </TextBlock>
+                <TextBlock>
+                    <Run Text="Количество: " FontSize="15"></Run>
+                    <Run Text="{Binding Amount}" FontWeight="Bold"></Run>
+                </TextBlock>
+
+                <TextBlock x:Name="PriceCardTextblock">
+                    <Run Text="{Binding Price, StringFormat={}{0:#.##}}" FontSize="25" FontWeight="UltraBlack" >
+                        
+                    </Run>
+                    <Run Text="руб." FontSize="15"/>
+                </TextBlock>
+            </StackPanel>
+
+            <!--Second StackPanel-->
+            <StackPanel Orientation="Horizontal" Height="145">
+                <StackPanel Margin="5 0 0 0"
+                            Width="120"  
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+                    <!--Wholesale | Tunning | Original-->
+                    <StackPanel>
+                        <TextBlock>
+                            <Run Text="Тип: " FontSize="13"/>
+                            <Run x:Name="WholesaleTextblock" Text="{Binding Type, Mode=OneWay}" FontWeight="Bold"></Run>
+                        </TextBlock>
+                        <TextBlock>
+                            <Run Text="Цвет: " FontSize="13"></Run>
+                            <Run x:Name="TunningTextblock" Text="{Binding Color, Mode=OneWay}" FontWeight="Bold"></Run>
+                        </TextBlock>
+                       
+                    </StackPanel>
+
+                    <!--Rating - stars-->
+                    <StackPanel Orientation="Horizontal" Height="auto" Margin="0 15 0 0">
+                        <materialDesign:PackIcon Kind="Star" Foreground="Goldenrod"></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="Star" Foreground="Goldenrod"></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="Star" Foreground="Goldenrod"></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="Star" Foreground="Goldenrod"></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="Star" Foreground="Gray"></materialDesign:PackIcon>
+                    </StackPanel>
+                    <!--In stock-->
+                    <StackPanel Orientation="Horizontal" Margin="4 3 0 0" Height="8">
+                        <Ellipse StrokeThickness="8">
+                            <Ellipse.Stroke>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="LightGreen" Offset="0.5"></GradientStop>
+                                    <GradientStop Color="Green" Offset="1"></GradientStop>
+                                </RadialGradientBrush>
+                            </Ellipse.Stroke>
+                        </Ellipse>
+                        <TextBlock Text="в наличии" FontSize="7" Margin="5 0 0 0" Foreground="Gray" Padding="0" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <!--Buy button-->
+                    <Button x:Name="AddToCartButton" 
+                            Background="Green"
+                            BorderThickness="0" Margin="0 15 0 0"
+                            Height="30" Width="30" Padding="0"
+                            HorizontalAlignment="Left"
+                            Click="AddToCartButton_Click" Cursor="Hand">
+
+                        <materialDesign:PackIcon Kind="Cart"/>
+                    </Button>
+
+                </StackPanel>
+
+                <Image Margin="0 0 0 -60" 
+                       Source="{Binding Image}"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                       Height="198" Width="180"/>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

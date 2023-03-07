@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CardWheelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAutoMarkView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAutoModelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAutoModifView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddAutoTireWheelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddDataWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddDriveUnitView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AuthenticationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CardTireView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminPanelPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CartPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SearchTiresPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SearchWheelPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UpdateAmount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UpdateStatus.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CardWheelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddAutoMarkView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddAutoModelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddAutoModifView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddAutoTireWheelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddDataWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddDriveUnitView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AuthenticationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CardTireView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourcesDictionaryCustom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddUser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminPanelPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CartPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SearchTiresPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SearchWheelPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UpdateAmount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UpdateStatus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

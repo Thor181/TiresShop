@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="TiresShopApplication.Views.UpdateStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TiresShopApplication.Views"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="160.057" d:DesignWidth="199.704">
+    <Grid d:Background="White" Height="160" Width="200">
+        <StackPanel>
+            <TextBox x:Name="IdTextBox" Margin="5"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                VerticalAlignment="Top"
+                AcceptsReturn="True"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto"
+                materialDesign:HintAssist.Hint="Введите код шины" Cursor="IBeam" />
+            <ComboBox x:Name="status_update" Margin="5" materialDesign:HintAssist.Hint="Выберите статус" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
+                <ComboBoxItem Content="Активен"/>
+                <ComboBoxItem Content="Неактивен"/>
+            </ComboBox>
+            <Button x:Name="SaveButton" Margin="5" Width="150" Content="Сохранить" Cursor="Hand" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

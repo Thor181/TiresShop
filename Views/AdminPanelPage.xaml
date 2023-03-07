@@ -1,0 +1,65 @@
+﻿<Page x:Class="TiresShopApplication.Views.AdminPanelPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TiresShopApplication.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="AdminPanelPage">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="2" 
+                Background="{StaticResource GlobalSecondaryBackgroundColor}"
+                CornerRadius="10">
+        </Border>
+
+        <StackPanel x:Name="FilterStackPanel" Orientation="Horizontal" Margin="10 10 0 0" Grid.Row="0">
+
+            <ComboBox x:Name="WorkTableCombobox" SelectionChanged="WorkTableCombobox_SelectionChanged"
+                      Style="{DynamicResource MaterialDesignOutlinedComboBox}" 
+                      BorderBrush="Black" 
+                      Background="White" 
+                      Width="150" Height="50" VerticalContentAlignment="Center"
+                      Padding="5"
+                      materialDesign:HintAssist.Hint="Таблица" materialDesign:HintAssist.Foreground="Black">
+            </ComboBox>
+
+            <Button x:Name="AddButton" Height="50" Width="50" Margin="5 0 0 0" Padding="0" Cursor="Hand" Click="AddButton_Click" Background="White">
+                <materialDesign:PackIcon Kind="PlusBox" Width="30" Height="30" Background="White"/>
+            </Button>
+
+            <materialDesign:PopupBox StaysOpen="True">
+                <Grid Width="250" >
+                    <StackPanel >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="Id: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"></TextBlock>
+                            <TextBox x:Name="IdForDeleteTextbox" Width="50" HorizontalContentAlignment="Center" VerticalAlignment="Center" ></TextBox>
+                            <Button x:Name="DeleteButton" Content="Удалить по id" Background="Orange" Margin="5 0 0 0" Style="{DynamicResource MaterialDesignFlatButton}" Click="DeleteButton_Click"></Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+            </materialDesign:PopupBox>
+            <DockPanel>
+                <Button x:Name="Buttom_Amount" Width="190" DockPanel.Dock="Left" Content="Изменение количества" Cursor="Hand" Click="Buttom_Amount_Click" Background="White" Visibility="Hidden" d:Visibility="Visible"/>
+                <Button x:Name="Buttom_User" Width="240" DockPanel.Dock="Left"   Content="Добавить нового пользователя" Cursor="Hand" Click="Buttom_User_Click"  Background="White" Visibility="Hidden" d:Visibility="Visible" />
+                <Button x:Name="Buttom_Status" Width="198" DockPanel.Dock="Left" Content="Изменение статуса" Cursor="Hand" Click="Buttom_Status_Click"  Background="White" Visibility="Hidden" d:Visibility="Visible" />
+                <Button x:Name="ExportSales" Content="Экспорт" Click="ExportSales_Click" DockPanel.Dock="Right" Cursor="Hand" Background="White" Visibility="Visible" d:Visibility="Visible"></Button>
+            </DockPanel>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="10">
+            <DataGrid x:Name="MainDataGridView" CanUserAddRows="True" SelectionMode="Single" SelectionUnit="FullRow">
+               
+            </DataGrid>
+        </Grid>
+
+
+    </Grid>
+</Page>

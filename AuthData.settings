@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TiresShopApplication" GeneratedClassName="AuthData">
+  <Profiles />
+  <Settings>
+    <Setting Name="adminLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin</Value>
+    </Setting>
+    <Setting Name="adminPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123</Value>
+    </Setting>
+    <Setting Name="managerLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Manager</Value>
+    </Setting>
+    <Setting Name="managerPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
